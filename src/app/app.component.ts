@@ -10,15 +10,17 @@ export class Hero {
   template: `<h1>Title {{title}}</h1>
   <h2>My Heroes</h2>
   <ul class="heroes">
-    <li *ngFor="let hero of heroes">
+    <li *ngFor="let hero of heroes" (click) ="onSelect(hero)" [class.selected]="hero === selectedHero">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </li>
   </ul>
-  <h2>{{hero.name}} details!</h2>
-  <div><label>Id: </label>{{hero.id}}</div>
-  <div>
-    <label>Name: </label>
-    <input [(ngModel)] = "hero.name" placeholder="name">
+  <div *ngIf="selectedHero">
+    <h2>{{selectedHero.name}} details!</h2>
+    <div><label>Id: </label>{{selectedHero.id}}</div>
+    <div>
+      <label>Name: </label>
+      <input [(ngModel)] = "selectedHero.name" placeholder="name">
+    </div>
   </div>`,
   styles: [`
   .selected {
@@ -73,13 +75,15 @@ export class Hero {
 
 export class AppComponent  { 
   title = 'Tour of Heroes';
-  hero: Hero = {
-    id: 1,
-    name: 'Windstorm'
-  }; 
+  selectedHero: Hero;
 
   //#1 Initialization of heroes should be inside AppComponent.
   heroes = HEROES;
+
+  //#2 Always check the names of functions. Verify that the same name has been used in template and AppComponent.
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+  }
 }
 
 
