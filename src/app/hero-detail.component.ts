@@ -3,7 +3,7 @@ import { Hero } from './hero';
 
 @Component ({
     selector:`hero-detail`,
-    // `` Symbol is used for enclosing Component properties, not ''
+    //#3 ``Backtick Symbol is used for enclosing Component properties, not Single quotes''
     template: `
     <div *ngIf="hero">
         <h2>{{hero.name}} details!</h2>

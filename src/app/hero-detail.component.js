@@ -22,7 +22,7 @@ __decorate([
 HeroDetailComponent = __decorate([
     core_1.Component({
         selector: "hero-detail",
-        // `` Symbol is used for enclosing Component properties, not ''
+        //#3 ``Backtick Symbol is used for enclosing Component properties, not Single quotes''
         template: "\n    <div *ngIf=\"hero\">\n        <h2>{{hero.name}} details!</h2>\n        <div><label>Id: </label>{{hero.id}}</div>\n        <div>\n        <label>Name: </label>\n        <input [(ngModel)] = \"hero.name\" placeholder=\"name\">\n        </div>\n    </div>\n    "
     })
 ], HeroDetailComponent);
