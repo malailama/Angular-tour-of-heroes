@@ -85,7 +85,7 @@ export class AppComponent  implements OnInit {
   heroes: Hero[];
 
   getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
   }
 
   //#2 Always check the names of functions. Verify that the same name has been used in template and AppComponent.
