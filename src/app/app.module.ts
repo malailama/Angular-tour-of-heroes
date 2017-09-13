@@ -1,6 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule}    from '@angular/forms';
+import { HttpModule }    from '@angular/http';
 
 import { AppComponent }  from './app.component';
 import { HeroDetailComponent } from './hero-detail.component';
@@ -10,6 +11,11 @@ import { DashboardComponent } from './dashboard.component';
 
 import { AppRoutingModule } from './app-routing.module';
 
+// Imports for loading & configuring the in-memory web api
+//#7 The directory is not recognised after importing
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
+
 //#4 If Router Module is placed under @NgModule then an error is being thrown. Check out why.
 //The Router module has been directlt palced in the imports section of @NgModule
 //The error was their because component class must be followed by @ decorator
@@ -18,6 +24,8 @@ import { AppRoutingModule } from './app-routing.module';
   imports:      [ 
     BrowserModule, 
     FormsModule,
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule
   ],
   declarations: [ 
