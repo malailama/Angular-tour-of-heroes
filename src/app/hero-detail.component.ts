@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
 import 'rxjs/add/operator/switchMap';
@@ -10,11 +10,11 @@ import { HeroService } from './hero.service';
     selector:`hero-detail`,
     //#3 ``Backtick Symbol is used for enclosing Component properties, not Single quotes''
     templateUrl: `./hero-detail.component.html`,
+    styleUrls: [`./hero-detail.component.css`]
 })
 
 export class HeroDetailComponent implements OnInit{
-
-    @Input() hero: Hero;
+    hero: Hero;
 
     constructor(
         private heroService: HeroService,
