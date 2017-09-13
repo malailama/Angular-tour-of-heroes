@@ -10,6 +10,13 @@ var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var hero_detail_component_1 = require("./hero-detail.component");
+var hero_service_1 = require("./hero.service");
+var heroes_component_1 = require("./heroes.component");
+var dashboard_component_1 = require("./dashboard.component");
+var app_routing_module_1 = require("./app-routing.module");
+//#4 If Router Module is placed under @NgModule then an error is being thrown. Check out why.
+//The Router module has been directlt palced in the imports section of @NgModule
+//The error was their because component class must be followed by @ decorator
 var AppModule = (function () {
     function AppModule() {
     }
@@ -17,9 +24,23 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-        declarations: [app_component_1.AppComponent, hero_detail_component_1.HeroDetailComponent],
-        bootstrap: [app_component_1.AppComponent]
+        imports: [
+            platform_browser_1.BrowserModule,
+            forms_1.FormsModule,
+            app_routing_module_1.AppRoutingModule
+        ],
+        declarations: [
+            app_component_1.AppComponent,
+            dashboard_component_1.DashboardComponent,
+            hero_detail_component_1.HeroDetailComponent,
+            heroes_component_1.HeroesComponent
+        ],
+        providers: [
+            hero_service_1.HeroService
+        ],
+        bootstrap: [
+            app_component_1.AppComponent
+        ]
     })
 ], AppModule);
 exports.AppModule = AppModule;
