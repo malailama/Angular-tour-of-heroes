@@ -9,7 +9,7 @@ import { HeroService } from './hero.service';
 @Component ({
     selector:`hero-detail`,
     //#3 ``Backtick Symbol is used for enclosing Component properties, not Single quotes''
-    templateUrl: `./hero-detail.component.html`
+    templateUrl: `./hero-detail.component.html`,
 })
 
 export class HeroDetailComponent implements OnInit{
