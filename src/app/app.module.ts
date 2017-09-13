@@ -12,7 +12,6 @@ import { DashboardComponent } from './dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 
 // Imports for loading & configuring the in-memory web api
-//#7 The directory is not recognised after importing
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 

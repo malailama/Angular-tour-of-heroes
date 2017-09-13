@@ -16,7 +16,6 @@ var heroes_component_1 = require("./heroes.component");
 var dashboard_component_1 = require("./dashboard.component");
 var app_routing_module_1 = require("./app-routing.module");
 // Imports for loading & configuring the in-memory web api
-//#7 The directory is not recognised after importing
 var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
 var in_memory_data_service_1 = require("./in-memory-data.service");
 //#4 If Router Module is placed under @NgModule then an error is being thrown. Check out why.
